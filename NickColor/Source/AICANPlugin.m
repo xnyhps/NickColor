@@ -80,7 +80,7 @@ NSComparisonResult compareContacts(id a, id b, void *context) {
 	AIChat *chat = content.chat;
 		
 	// We need this ugly runtime hack to get the validSenderColors
-	AIWebKitMessageViewPlugin *webKitPlugin = (AIWebKitMessageViewPlugin *)[adium.pluginLoader pluginWithClassName:@"AIWebKitMessageViewPlugin"];
+	AIWebKitMessageViewPlugin *webKitPlugin = (AIWebKitMessageViewPlugin *)[adium.componentLoader pluginWithClassName:@"AIWebKitMessageViewPlugin"];
 	
 	// Ensure we don't crash, even if stuff got changed
 	if (!webKitPlugin) {
@@ -95,8 +95,8 @@ NSComparisonResult compareContacts(id a, id b, void *context) {
 	
 	AIWebkitMessageViewStyle *viewStyle = [webKitPlugin currentMessageStyleForChat:chat];
 	
-	if (![viewStyle respondsToSelector:@selector(validSenderColors:)]) {
-		NSLog(@" *** AICANPlugin: viewStyle doesn't respond to -validSenderColors:!");
+	if (![viewStyle respondsToSelector:@selector(validSenderColors)]) {
+		NSLog(@" *** AICANPlugin: viewStyle doesn't respond to -validSenderColors!");
 		return inHTMLString;
 	}
 	

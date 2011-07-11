@@ -9,17 +9,22 @@
 /* Begin PBXBuildFile section */
 		7607AB3713A26A28007CB258 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7607AB3613A26A28007CB258 /* Cocoa.framework */; };
 		7607AB4113A26A28007CB258 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7607AB3F13A26A28007CB258 /* InfoPlist.strings */; };
+		7607AB4B13A26AC8007CB258 /* AICANPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7607AB4A13A26AC8007CB258 /* AICANPlugin.m */; };
+		76A1F66313CB11D40063DE17 /* Adium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A1F66213CB11D40063DE17 /* Adium.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7607AB3313A26A28007CB258 /* ColorAllNames.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorAllNames.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		7607AB3613A26A28007CB258 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7607AB3913A26A28007CB258 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		7607AB3A13A26A28007CB258 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7607AB3B13A26A28007CB258 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		7607AB3E13A26A28007CB258 /* ColorAllNames-Info.plist */ = {isa = PBXFileReference; path = "ColorAllNames-Info.plist"; sourceTree = "<group>"; };
 		7607AB4013A26A28007CB258 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7607AB4213A26A28007CB258 /* ColorAllNames-Prefix.pch */ = {isa = PBXFileReference; path = "ColorAllNames-Prefix.pch"; sourceTree = "<group>"; };
+		7607AB4913A26AC8007CB258 /* AICANPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AICANPlugin.h; path = Source/AICANPlugin.h; sourceTree = "<group>"; };
+		7607AB4A13A26AC8007CB258 /* AICANPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AICANPlugin.m; path = Source/AICANPlugin.m; sourceTree = "<group>"; };
+		76A1F66213CB11D40063DE17 /* Adium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Adium.framework; path = "../adium-1.4/build/Debug/Adium.framework"; sourceTree = "<group>"; };
+		76A1F66413CB2A520063DE17 /* NickColor.AdiumPlugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NickColor.AdiumPlugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		76B50F1313CB2ACF00BC0A32 /* NickColor-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NickColor-Info.plist"; sourceTree = "<group>"; };
+		76B50F1413CB2ACF00BC0A32 /* NickColor-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NickColor-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +33,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7607AB3713A26A28007CB258 /* Cocoa.framework in Frameworks */,
+				76A1F66313CB11D40063DE17 /* Adium.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,7 +43,7 @@
 		7607AB2813A26A28007CB258 = {
 			isa = PBXGroup;
 			children = (
-				7607AB3C13A26A28007CB258 /* ColorAllNames */,
+				7607AB3C13A26A28007CB258 /* NickColor */,
 				7607AB3513A26A28007CB258 /* Frameworks */,
 				7607AB3413A26A28007CB258 /* Products */,
 			);
@@ -46,7 +52,7 @@
 		7607AB3413A26A28007CB258 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7607AB3313A26A28007CB258 /* ColorAllNames.bundle */,
+				76A1F66413CB2A520063DE17 /* NickColor.AdiumPlugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +60,7 @@
 		7607AB3513A26A28007CB258 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76A1F66213CB11D40063DE17 /* Adium.framework */,
 				7607AB3613A26A28007CB258 /* Cocoa.framework */,
 				7607AB3813A26A28007CB258 /* Other Frameworks */,
 			);
@@ -70,30 +77,40 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		7607AB3C13A26A28007CB258 /* ColorAllNames */ = {
+		7607AB3C13A26A28007CB258 /* NickColor */ = {
 			isa = PBXGroup;
 			children = (
+				7607AB4813A26AAF007CB258 /* Source */,
 				7607AB3D13A26A28007CB258 /* Supporting Files */,
 			);
-			path = ColorAllNames;
+			path = NickColor;
 			sourceTree = "<group>";
 		};
 		7607AB3D13A26A28007CB258 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7607AB3E13A26A28007CB258 /* ColorAllNames-Info.plist */,
+				76B50F1313CB2ACF00BC0A32 /* NickColor-Info.plist */,
+				76B50F1413CB2ACF00BC0A32 /* NickColor-Prefix.pch */,
 				7607AB3F13A26A28007CB258 /* InfoPlist.strings */,
-				7607AB4213A26A28007CB258 /* ColorAllNames-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7607AB4813A26AAF007CB258 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7607AB4913A26AC8007CB258 /* AICANPlugin.h */,
+				7607AB4A13A26AC8007CB258 /* AICANPlugin.m */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7607AB3213A26A28007CB258 /* ColorAllNames */ = {
+		7607AB3213A26A28007CB258 /* NickColor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7607AB4513A26A28007CB258 /* Build configuration list for PBXNativeTarget "ColorAllNames" */;
+			buildConfigurationList = 7607AB4513A26A28007CB258 /* Build configuration list for PBXNativeTarget "NickColor" */;
 			buildPhases = (
 				7607AB2F13A26A28007CB258 /* Sources */,
 				7607AB3013A26A28007CB258 /* Frameworks */,
@@ -103,9 +120,9 @@
 			);
 			dependencies = (
 			);
-			name = ColorAllNames;
+			name = NickColor;
 			productName = ColorAllNames;
-			productReference = 7607AB3313A26A28007CB258 /* ColorAllNames.bundle */;
+			productReference = 76A1F66413CB2A520063DE17 /* NickColor.AdiumPlugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -113,9 +130,8 @@
 /* Begin PBXProject section */
 		7607AB2A13A26A28007CB258 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 7607AB2D13A26A28007CB258 /* Build configuration list for PBXProject "ColorAllNames" */;
+			buildConfigurationList = 7607AB2D13A26A28007CB258 /* Build configuration list for PBXProject "NickColor" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -125,7 +141,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7607AB3213A26A28007CB258 /* ColorAllNames */,
+				7607AB3213A26A28007CB258 /* NickColor */,
 			);
 		};
 /* End PBXProject section */
@@ -146,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7607AB4B13A26AC8007CB258 /* AICANPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +184,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = /Volumes/RamDisk/Debug;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -176,7 +194,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -185,12 +207,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = /Volumes/RamDisk/Debug;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -200,14 +228,20 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../adium-1.4/build/Release\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ColorAllNames/ColorAllNames-Prefix.pch";
-				INFOPLIST_FILE = "ColorAllNames/ColorAllNames-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				GCC_PREFIX_HEADER = "NickColor/NickColor-Prefix.pch";
+				INFOPLIST_FILE = "NickColor/NickColor-Info.plist";
+				INSTALL_PATH = "“$(HOME)/Library/Application Support/Adium 2.0/PlugIns/”";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				SDKROOT = macosx10.5;
+				WRAPPER_EXTENSION = AdiumPlugin;
 			};
 			name = Debug;
 		};
@@ -217,20 +251,26 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/RamDisk/Debug,
+					"\"$(SRCROOT)/../adium-1.4/build/Debug\"",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ColorAllNames/ColorAllNames-Prefix.pch";
-				INFOPLIST_FILE = "ColorAllNames/ColorAllNames-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				GCC_PREFIX_HEADER = "NickColor/NickColor-Prefix.pch";
+				INFOPLIST_FILE = "NickColor/NickColor-Info.plist";
+				INSTALL_PATH = "“$(HOME)/Library/Application Support/Adium 2.0/PlugIns/”";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = AdiumPlugin;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7607AB2D13A26A28007CB258 /* Build configuration list for PBXProject "ColorAllNames" */ = {
+		7607AB2D13A26A28007CB258 /* Build configuration list for PBXProject "NickColor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7607AB4313A26A28007CB258 /* Debug */,
@@ -239,13 +279,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7607AB4513A26A28007CB258 /* Build configuration list for PBXNativeTarget "ColorAllNames" */ = {
+		7607AB4513A26A28007CB258 /* Build configuration list for PBXNativeTarget "NickColor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7607AB4613A26A28007CB258 /* Debug */,
 				7607AB4713A26A28007CB258 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

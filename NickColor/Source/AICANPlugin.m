@@ -141,6 +141,8 @@ NSComparisonResult compareContacts(id a, id b, void *context) {
 		}
 		
 		result = [fragments componentsJoinedByString:@"<"];
+		
+		[fragments release];
 	}
 	
 	return result;

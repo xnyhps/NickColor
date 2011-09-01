@@ -21,9 +21,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0.0.1</string>
+	<string>0.0.2</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2011 Thijs Alkemade. All rights reserved.</string>
+	<string>Copyright © 2011 Thijs Alkemade.</string>
 	<key>NSPrincipalClass</key>
 	<string>AICANPlugin</string>
 </dict>
